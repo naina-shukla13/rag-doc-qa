@@ -19,3 +19,5 @@ pydantic-settings==2.13.1
 fastembed==0.4.2
 cryptography==46.0.7
 python-multipart==0.0.24
+cohere 
+langchain-cohere 

@@ -2,7 +2,7 @@ import os
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import FastEmbedEmbeddings
+from langchain_cohere import CohereEmbeddings
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.output_parsers import StrOutputParser
@@ -10,7 +10,11 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_core.messages import HumanMessage, AIMessage
 from app.config import GROQ_API_KEY, VECTORSTORE_DIR
 
-embeddings = FastEmbedEmbeddings(model_name="BAAI/bge-small-en-v1.5")
+
+embeddings = CohereEmbeddings(
+    cohere_api_key=os.getenv("rgR7LnSe51JUIPeRrLIXQIEIJpKxiOvTS8BRSczA"),
+    model="embed-english-light-v3.0"
+)
 
 def process_pdf(file_path: str, doc_id: str):
     loader = PyPDFLoader(file_path)
