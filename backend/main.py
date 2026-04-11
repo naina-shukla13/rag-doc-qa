@@ -5,11 +5,11 @@ from app.routes import router
 app = FastAPI(title="RAG Document Q&A API")
 
 origins = [
+    "https://docmind-ai.up.railway.app",
     "https://shimmering-creativity-production.up.railway.app",
     "http://localhost:5173",
     "http://localhost:3000",
 ]
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
