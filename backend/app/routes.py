@@ -9,8 +9,7 @@ from app.auth import (
     get_current_user, fake_users_db
 )
 from app.rag import process_pdf, get_answer
-from app.config import UPLOAD_DIR
-
+from app.config import UPLOAD_DIR, VECTORSTORE_DIR
 router = APIRouter()
 
 class RegisterRequest(BaseModel):
