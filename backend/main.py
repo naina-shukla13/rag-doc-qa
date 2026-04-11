@@ -4,10 +4,16 @@ from app.routes import router
 
 app = FastAPI(title="RAG Document Q&A API")
 
+origins = [
+    "https://shimmering-creativity-production.up.railway.app",
+    "http://localhost:5173",
+    "http://localhost:3000",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=False,
+    allow_origins=origins,
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
