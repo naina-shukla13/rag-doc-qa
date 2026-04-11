@@ -31,6 +31,7 @@ def process_pdf(file_path: str, doc_id: str):
 
 def get_answer(doc_id: str, question: str, chat_history: list):
     save_path = os.path.join(VECTORSTORE_DIR, doc_id)
+    os.makedirs(VECTORSTORE_DIR, exist_ok=True)
     if not os.path.exists(save_path):
         raise FileNotFoundError("Document not processed yet.")
 
