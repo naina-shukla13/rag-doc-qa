@@ -12,7 +12,7 @@ from app.config import GROQ_API_KEY, VECTORSTORE_DIR
 
 
 embeddings = CohereEmbeddings(
-    cohere_api_key=os.getenv("rgR7LnSe51JUIPeRrLIXQIEIJpKxiOvTS8BRSczA"),
+    cohere_api_key=os.getenv("COHERE_API_KEY"),
     model="embed-english-light-v3.0"
 )
 
